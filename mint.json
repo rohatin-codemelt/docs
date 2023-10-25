@@ -38,7 +38,20 @@
     },
     {
       "group": "Content Types",
-      "pages": ["content-types/burgermenu", "content-types/paymentmethods","content-types/vendors", "content-types/socialItems"]
+      "pages": [
+        "content-types/burgermenu", 
+        "content-types/paymentmethods",
+        "content-types/vendors", 
+        "content-types/socialItems", 
+        {
+          "group": "Reorder html content",
+          "pages": [
+            "content-types/casinoitems",
+            "content-types/homepageitems",
+            "content-types/livecasinoitems"
+          ]
+        }
+      ]
     },
     {
       "group": "API Documentation",
