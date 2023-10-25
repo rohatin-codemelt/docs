@@ -38,7 +38,7 @@
     },
     {
       "group": "Content Types",
-      "pages": ["content-types/burgermenu", "content-types/paymentmethods", "content-types/socialitems", "content-types/vendors"]
+      "pages": ["content-types/burgermenu", "content-types/paymentmethods","content-types/vendors", "content-types/socialitems"]
     },
     {
       "group": "API Documentation",
