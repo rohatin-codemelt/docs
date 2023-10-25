@@ -1,0 +1,95 @@
+---
+title: Common Knowledge
+---
+
+# Common Knowledge for Casinomanhattan.ro Strapi Application
+
+This document provides common knowledge about the Casinomanhattan.ro Strapi application. The application serves as a content management system for the Casinomanhattan.ro platform, allowing admins to modify text, promotions, banners, rearrange HTML elements and more marketing content.
+
+## Purpose of the Application
+
+The Casinomanhattan.ro Strapi application is designed to streamline the management and customization of content on the Casinomanhattan.ro platform. It offers the following core functionalities:
+
+### 1. Content Customization
+
+- **Text Modification**: Admins can update text content on the platform, allowing for quick and easy changes to the website's textual information.
+
+- **Promotions Management**: The application enables the management of promotions, ensuring that the latest offers and promotions are featured on the website.
+
+- **Banner Updates**: Admins can update banners on the website, making it possible to showcase different banners as needed.
+
+- **HTML Element Rearrangement**: The application facilitates the rearrangement of HTML elements, providing flexibility in the presentation of content.
+
+- **Payment Methods**: Admins have the option to create, update, and delete payment methods, allowing for seamless management of supported payment options.
+
+- **Ask & Questions**: The platform allows for the management of "Ask & Questions" content, providing a space for users to seek information and answers.
+
+- **Game Rules**: Admins can update and manage game rules, ensuring that players have access to the rules and guidelines for various games.
+
+- **Support Hours**: The application provides the functionality to schedule support hours, ensuring that users receive assistance and support during designated times.
+
+---
+### 2. Plugins Integration
+---
+
+The Casinomanhattan.ro Strapi application includes two key plugins that enhance functionality:
+
+#### Drag & Drop Plugin
+
+- **Purpose**: The Drag & Drop plugin is integrated into the application to simplify the reordering of content items. Any content type that includes a field named "position" is enhanced with a blue button for easy reordering. The GIF below illustrates the Drag & Drop functionality:
+dd
+<Frame>
+  <img src="/images/drag-and-drop.gif" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+
+---
+
+#### Publisher Plugin
+
+<div style={{ display: 'flex', alignItems: 'center' }}>
+  <div style={{ flex: 1 }}>
+    - **Availability**: The Publisher plugin is available for all content types within the application.
+    - **Draft State**: Content that is in a "draft" state is not visible on the Casinomanhattan.ro platform. Draft content is hidden from public view until it is published.
+    - **Publish**: Admins can schedule the time to "publish" content, making it accessible to the public. Published content is live and viewable on the website.
+    - **Unpublish**: Content that is no longer relevant can be "unpublished," removing it from public view while retaining it in the system for future reference.
+  </div>
+  <div style={{ flex: 1, marginLeft: '1rem' }}>
+    <Frame>
+      <img src="/images/publisher-plugin.gif" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </div>
+</div>
+
+---
+
+#### Multi-language Feature (using i18n)
+
+- **Availability**: The i18n (internationalization) localization feature is available for all content types within the application.
+
+- **Multi-Language Support**: Strapi's i18n feature allows you to manage content in multiple languages, providing a seamless experience for a diverse audience.
+
+- **Select a Locale**: To create or edit content in a specific language, select the desired locale or language from the available options. This ensures that the content is tailored to the target audience.
+
+- **Translate Content**: Once you've selected a locale, you can easily translate content into the chosen language. This includes text, descriptions, and any other content that needs to be localized.
+
+- **Enhanced User Experience**: Using i18n, you can create a more inclusive and user-friendly experience by providing content in the user's preferred language.
+
+- **Simple Content Management**: With the i18n feature, managing content in multiple languages is simplified, making it easy to maintain a consistent user experience across different locales.
+
+- **No Technical Knowledge Required**: You don't need to be a technical expert to use this feature. Simply choose the language and input the content in the selected locale.
+
+Using Strapi's i18n localization feature, you can effortlessly manage and provide content in multiple languages to cater to a global audience without the need for technical expertise.
+
+
+## Key Terms Explanation
+
+To ensure a clear understanding of the application's functionality, here are explanations of key terms:
+
+- **Draft**: Content that is in "draft" state is not yet visible to the public. It's considered work in progress, allowing content creators to make changes and updates without affecting the live website.
+
+- **Publish**: "Publish" is the action of making content visible to the public. Published content is live and accessible to users on the Casinomanhattan.ro platform.
+
+- **Unpublish**: "Unpublish" refers to the action of making content that was previously published no longer visible to the public. Unpublished content is retained in the system for future use but is not accessible on the live website.
+
+By understanding these key terms and the purpose of the application, users can effectively manage and customize content on the Casinomanhattan.ro platform.

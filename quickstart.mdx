@@ -1,86 +1,40 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: Quickstart Guide
+description: Welcome to the Casinomanhattan.ro Content Management System! This quickstart guide provides essential information for managing content effectively.
 ---
 
-## Setup your development
+## Website Redeployment
 
-Learn how to update your docs locally and and deploy them to the public.
+### Content Types Requiring Redeployment
 
-### Edit and preview
+The following content types require website redeployment, which typically takes around 2-3 minutes:
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
-  </Accordion>
-</AccordionGroup>
+- **Static Pages**: Any changes to static pages, such as about us or privacy policy, will necessitate a redeployment to ensure they reflect correctly on the website.
 
-### Deploy your changes
+- **Casino Categories**: Modifying or adding new casino categories will trigger a redeployment to update the website's navigation and categorization.
 
-<AccordionGroup>
+- **Promotions**: Changes to promotions require redeployment to showcase the latest deals on the website.
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
+### Real-Time Updates
 
-</AccordionGroup>
+For other content types, such as articles or news, changes made in the CMS are immediately reflected on the website upon saving. You can enjoy real-time updates without the need for a redeployment.
 
-## Update your docs
+## Testing and Deployment Process
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+### Testing in Staging Environment
 
-<CardGroup>
+When adding new items or making significant changes, it's crucial to test them first in the staging environment to ensure they work as expected. Our staging environment is available at [77777bet.ro](http://77777bet.ro). Use this environment to verify content and functionality.
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
+### Moving to Production
 
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
->
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
+Once you are satisfied with the changes in the staging environment, you can proceed to move the items to the production environment for public access. Our production environment is [Casinomanhattan.ro](http://casinomanhattan.ro).
 
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
+To manage content effectively:
 
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
+1. Make changes in the staging environment at [CMS Staging](http://cms.77777bet.ro).
 
-</CardGroup>
+2. Test thoroughly to confirm everything works as intended.
+
+3. After successful testing, move the content to the production environment at [CMS Production](http://cms.casinomanhattan.ro) for live access by the public.
+
+By following these steps, you can ensure that your content is tested and ready for public consumption while maintaining a smooth and efficient content management process.
