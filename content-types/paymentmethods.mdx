@@ -13,6 +13,9 @@ Payment Method is displayed in the footer of the website. They are used to provi
   </Frame>
 </div>
 
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
 ## Table of Contents
 
 - [1. Creating a New Payment Method](#creating-a-new-payment-method)
@@ -27,110 +30,113 @@ To manage Payment Methods, you need to access the Content Manager in Strapi. Her
 
 2. In the dashboard, click on "Content Manager" in the sidebar.
 
+---
+
 ## Creating a New Payment Method
 
 To add a new payment method to your website, follow these steps:
 
-1. In the Content Manager, locate and click on "Payment Methods" in the list of content types.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, locate and click on "Payment-Methods" in the list of content types.
+  </Step>
+  <Step title="Create a New Payment Method">
+    You'll see a list of existing Payment Methods. To create a new one, click the "Add New Payment Method" button.
+  </Step>
+  <Step title="Fill in Payment Method Details">
+    Fill in the following details for your new method:
+    - **Name**: Enter the name of the payment method (e.g., "Credit Card," "PayPal").
+    - **Image Dark**: Upload an image representing the payment method for dark backgrounds.
+    - **Image Light**: Upload an image for light backgrounds.
+    - **Position**: Specify the order in which this method should appear (e.g., 1, 2, 3).
+    - **Description Top**: This is the first description displayed on the website. It provides users with an initial overview of the payment method, making it essential for creating a positive first impression.
+    - **Deposit Info**: Use this field to provide important information related to depositing funds. It's where users can find details about how to make deposits, any specific requirements, and important instructions.
+    - **Deposit Limit**: This field specifies the limit amount for deposits displayed in the table. Users can refer to this value to understand the minimum or maximum deposit amount associated with the payment method.
+    - **Deposit Transfer**: Indicate the time it takes for the deposit to be processed when using this payment method. This information helps users plan their transactions and expectations.
+    - **Deposit Tax/Fee**: Highlight any fees or charges associated with depositing money using this method. Users should be aware of any additional costs they may incur during the deposit process.
+    - **Deposit Percent**: Specify the percentage taken, if any, for deposits. This percentage fee is important for users to understand the cost of using the payment method.
+    - **Withdrawal Info**: Similar to the deposit info, this field is used for providing essential information related to withdrawals. Users can find instructions and requirements for initiating withdrawals.
+    - **Withdrawal Limit**: Specify the limit amount for withdrawals displayed in the table. Users can refer to this value to understand the minimum or maximum withdrawal amount for this payment method.
+    - **Withdrawal Transfer**: Indicate the time it takes to process withdrawals when using this payment method. Users should know when they can expect to receive their funds.
+    - **Withdrawal Tax/Fee**: Highlight any fees or charges associated with withdrawing money. Users need to be aware of any costs associated with the withdrawal process.
+    - **Withdrawal Percent**: Specify the percentage fees taken for withdrawals. This percentage fee helps users understand the cost associated with using the payment method for withdrawals.
+  </Step>
+  <Step title="Optional Additional Information">
+    Optionally, you can add more information using the rich text editors for various attributes. You can provide details about the payment method, deposit information, withdrawal details, and more.
+  </Step>
+  <Step title="Format and Style Content">
+    Use the rich text editor to format and style your content:
+    - **Content**: In the rich text editor, you can edit text content, change font size, apply text formatting (e.g., bold, italics), and even select text colors. The editor provides a toolbar with various text editing options to make your content visually appealing.
+  </Step>
+  <Step title="Save Your Payment Method">
+    After filling in the information, click the "Save" button to create the new Payment Method.
+  </Step>
+</Steps>
 
-2. You'll see a list of existing Payment Methods. To create a new one, click the "Add New Payment Method" button.
-
-3. Fill in the following details for your new method:
-
-   - **Name**: Enter the name of the payment method (e.g., "Credit Card," "PayPal").
-   - **Image Dark**: Upload an image representing the payment method for dark backgrounds.
-   - **Image Light**: Upload an image for light backgrounds.
-   - **Position**: Specify the order in which this method should appear (e.g., 1, 2, 3).
-
-   - **Description Top**: This is the first description displayed on the website. It provides users with an initial overview of the payment method, making it essential for creating a positive first impression.
-
-   - **Deposit Info**: Use this field to provide important information related to depositing funds. It's where users can find details about how to make deposits, any specific requirements, and important instructions.
-
-   - **Deposit Limit**: This field specifies the limit amount for deposits displayed in the table. Users can refer to this value to understand the minimum or maximum deposit amount associated with the payment method.
-
-   - **Deposit Transfer**: Indicate the time it takes for the deposit to be processed when using this payment method. This information helps users plan their transactions and expectations.
-
-   - **Deposit Tax/Fee**: Highlight any fees or charges associated with depositing money using this method. Users should be aware of any additional costs they may incur during the deposit process.
-
-   - **Deposit Percent**: Specify the percentage taken, if any, for deposits. This percentage fee is important for users to understand the cost of using the payment method.
-
-   - **Withdrawal Info**: Similar to the deposit info, this field is used for providing essential information related to withdrawals. Users can find instructions and requirements for initiating withdrawals.
-
-   - **Withdrawal Limit**: Specify the limit amount for withdrawals displayed in the table. Users can refer to this value to understand the minimum or maximum withdrawal amount for this payment method.
-
-   - **Withdrawal Transfer**: Indicate the time it takes to process withdrawals when using this payment method. Users should know when they can expect to receive their funds.
-
-   - **Withdrawal Tax/Fee**: Highlight any fees or charges associated with withdrawing money. Users need to be aware of any costs associated with the withdrawal process.
-
-   - **Withdrawal Percent**: Specify the percentage fees taken for withdrawals. This percentage fee helps users understand the cost associated with using the payment method for withdrawals.
-
-These fields allow you to provide comprehensive information about the payment method, helping users make informed decisions when depositing and withdrawing funds on the platform.
-
-
-4. Optionally, you can add more information using the rich text editors for various attributes. You can provide details about the payment method, deposit information, withdrawal details, and more.
-
-5. Use the rich text editor to format and style your content:
-   - **Content**: In the rich text editor, you can edit text content, change font size, apply text formatting (e.g., bold, italics), and even select text colors. The editor provides a toolbar with various text editing options to make your content visually appealing.
-
-6. After filling in the information, click the "Save" button to create the new Payment Method.
+---
 
 ## Editing an Existing Payment Method
 
 If you need to make changes to an existing Payment Method, follow these steps:
 
-1. In the Content Manager, find and click on "Payment Methods" in the list of content types.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on "Payment-Methods" in the list of content types.
+  </Step>
+  <Step title="Select Payment Method to Edit">
+    You'll see a list of existing Payment Methods. Locate the Payment Method you want to edit and click on it.
+  </Step>
+  <Step title="Edit Payment Method Properties">
+    Once you've selected the Payment Method, you can edit the properties as needed:
+    - **Name**: You have the option to update the name of the payment method. Modify it to reflect any changes in the payment method's name (e.g., from "Credit Card" to "Visa Card").
+    - **Image Dark**: You can update the image representing the payment method for dark backgrounds. Upload a new image to replace the existing one, if necessary.
+    - **Image Light**: Similarly, you can update the image for light backgrounds. Upload a new image to reflect changes in the visual representation of the payment method.
+    - **Position**: Modify the order in which this payment method should appear. Adjust the position value (e.g., from 1 to 2) to rearrange the order.
+    - **Description Top**: Edit the first description displayed on the website. Modify it to provide updated and relevant information about the payment method.
+    - **Deposit Info**: Use this field to update important information related to depositing funds. Ensure that it contains the latest details on how to make deposits, specific requirements, and essential instructions.
+    - **Deposit Limit**: Modify the limit amount for deposits displayed in the table, if necessary. Users should have accurate information about minimum and maximum deposit amounts.
+    - **Deposit Transfer**: Update the time it takes for deposits to be processed using this payment method. Users need to know the processing time for planning their transactions.
+    - **Deposit Tax/Fee**: If there are changes in fees or charges associated with depositing money, update this field to reflect the most current information.
+    - **Deposit Percent**: Change the percentage taken for deposits, if applicable. Ensure that users are aware of any costs associated with using this payment method.
+    - **Withdrawal Info**: Similarly, edit the information related to withdrawals. Provide the latest instructions and requirements for initiating withdrawals.
+    - **Withdrawal Limit**: Modify the limit amount for withdrawals displayed in the table. Ensure that users have accurate information about minimum and maximum withdrawal amounts.
+    - **Withdrawal Transfer**: Update the time it takes to process withdrawals using this payment method. Users should be informed about the expected processing time.
+    - **Withdrawal Tax/Fee**: If there are changes in fees or charges associated with withdrawing money, update this field to reflect the most current information.
+    - **Withdrawal Percent**: Change the percentage fees taken for withdrawals, if applicable. Ensure that users are aware of any costs associated with using this payment method for withdrawals.
+  </Step>
+  <Step title="Save Your Changes">
+    After making your edits, remember to save your changes by clicking the "Save" button.
+  </Step>
+</Steps>
 
-2. You'll see a list of existing Payment Methods. Locate the Payment Method you want to edit and click on it.
-
-3. Once you've selected the Payment Method, you can edit the properties as needed:
-
-   - **Name**: You have the option to update the name of the payment method. Modify it to reflect any changes in the payment method's name (e.g., from "Credit Card" to "Visa Card").
-
-   - **Image Dark**: You can update the image representing the payment method for dark backgrounds. Upload a new image to replace the existing one, if necessary.
-
-   - **Image Light**: Similarly, you can update the image for light backgrounds. Upload a new image to reflect changes in the visual representation of the payment method.
-
-   - **Position**: Modify the order in which this payment method should appear. Adjust the position value (e.g., from 1 to 2) to rearrange the order.
-
-   - **Description Top**: Edit the first description displayed on the website. Modify it to provide updated and relevant information about the payment method.
-
-   - **Deposit Info**: Use this field to update important information related to depositing funds. Ensure that it contains the latest details on how to make deposits, specific requirements, and essential instructions.
-
-   - **Deposit Limit**: Modify the limit amount for deposits displayed in the table, if necessary. Users should have accurate information about minimum and maximum deposit amounts.
-
-   - **Deposit Transfer**: Update the time it takes for deposits to be processed using this payment method. Users need to know the processing time for planning their transactions.
-
-   - **Deposit Tax/Fee**: If there are changes in fees or charges associated with depositing money, update this field to reflect the most current information.
-
-   - **Deposit Percent**: Change the percentage taken for deposits, if applicable. Ensure that users are aware of any costs associated with using this payment method.
-
-   - **Withdrawal Info**: Similarly, edit the information related to withdrawals. Provide the latest instructions and requirements for initiating withdrawals.
-
-   - **Withdrawal Limit**: Modify the limit amount for withdrawals displayed in the table. Ensure that users have accurate information about minimum and maximum withdrawal amounts.
-
-   - **Withdrawal Transfer**: Update the time it takes to process withdrawals using this payment method. Users should be informed about the expected processing time.
-
-   - **Withdrawal Tax/Fee**: If there are changes in fees or charges associated with withdrawing money, update this field to reflect the most current information.
-
-   - **Withdrawal Percent**: Change the percentage fees taken for withdrawals, if applicable. Ensure that users are aware of any costs associated with using this payment method for withdrawals.
-
-4. After making your edits, remember to save your changes by clicking the "Save" button.
+---
 
 ## Deleting a Payment Method
+<Warning>
+  Please be aware that deleting a "Payment Method" is permanent and cannot be undone. Make sure you no longer need the item before proceeding with the deletion.
+</Warning>
 
-If you need to remove a "Payment Method" from your website's footer, follow these steps:
 
-1. In the Content Manager, find and click on "Payment-Methods" in the list of content types.
+If you need to remove a "Payment Method" from your website, follow these steps:
 
-2. You'll see a list of existing Payment Methods. Locate the method you want to delete and click on it.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on "Payment-Methods" in the list of content types.
+  </Step>
+  <Step title="Select Payment Method to Delete">
+    You'll see a list of existing Payment Methods. Locate the method you want to delete and click on it.
+  </Step>
+  <Step title="Delete Payment Method">
+    In the Payment Method's detail view, find the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    Confirm the deletion when prompted.
+  </Step>
+</Steps>
 
-3. In the Payment Method's detail view, find the "Delete" or "Trash" button.
-
-4. Confirm the deletion when prompted.
-
-Please be aware that deleting a "Payment Method" is permanent and cannot be undone. Make sure you no longer need the method before proceeding with the deletion.
-
-5. The updated content will be reflected on your website right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
 
 By following these steps, you can easily edit existing Payment Methods to keep your website's payment information accurate and up to date.
 

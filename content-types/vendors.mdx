@@ -8,15 +8,17 @@ This guide will help you understand how to manage "Vendor" content in your Strap
 <Frame>
   <img src="/images/content-types/vendors.png" style={{ borderRadius: '0.5rem' }} />
 </Frame>
-
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
 ## Table of Contents
 
 - [1. Accessing Content Manager](#accessing-content-manager)
 - [2. Creating a New Vendor Entry](#creating-a-new-vendor-entry)
 - [3. Editing an Existing Vendor Entry](#editing-an-existing-vendor-entry)
-- [4. Ordering Vendor Entries](#ordering-vendor-entries)
+- [4. Deleting a Vendor Entry](#deleting-a-vendor-entry)
 
-## 1. Accessing Content Manager
+## Accessing Content Manager
 
 To manage Vendor entries, you need to access the Content Manager in Strapi. Here's how you can get there:
 
@@ -24,47 +26,73 @@ To manage Vendor entries, you need to access the Content Manager in Strapi. Here
 
 2. In the dashboard, click on "Content Manager" in the sidebar.
 
-## 2. Creating a New Vendor Entry
+## Creating a New Vendor Entry
 
 To add a new vendor to your website's slider, follow these steps:
 
-1. In the Content Manager, locate and click on "Vendors" in the list of content types.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, locate and click on "Vendors" in the list of content types.
+  </Step>
+  <Step title="Create a New Vendor Entry">
+    You'll see a list of existing Vendor entries. To create a new one, click the "Add New Vendor Entry" button.
+  </Step>
+  <Step title="Fill in Entry Details">
+    Fill in the following details for your new entry:
+    - **Vendor Name**: Enter the name of the vendor. It must match the name provided by EveryMatrix exactly.
+    - **Position**: Specify the order in which this vendor should appear (e.g., 1, 2, 3).
+  </Step>
+  <Step title="Save Your Entry">
+    After entering the name and details, click the "Save" button to create the new Vendor entry.
+  </Step>
+</Steps>
 
-2. You'll see a list of existing Vendor entries. To create a new one, click the "Add New Vendor Entry" button.
 
-3. Fill in the following details for your new entry:
-   - **Vendor Name**: Enter the name of the vendor. It must match the name provided by EveryMatrix exactly.
-   - **Position**: Specify the order in which this method should appear (e.g., 1, 2, 3).
-
-4. After entering the name, click the "Save" button to create the new Vendor entry.
-
-## 3. Editing an Existing Vendor Entry
+## Editing an Existing Vendor Entry
 
 If you need to make changes to an existing Vendor entry, follow these steps:
 
-1. In the Content Manager, find and click on "Vendors" to see the list of existing entries.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on "Vendors" to see the list of existing entries.
+  </Step>
+  <Step title="Select Vendor Entry to Edit">
+    Locate the Vendor entry you want to edit and click on it.
+  </Step>
+  <Step title="Edit Vendor Properties">
+    Edit the properties as needed, such as the Vendor Name.
+  </Step>
+  <Step title="Save Your Changes">
+    Remember to save your changes by clicking the "Save" button.
+  </Step>
+</Steps>
 
-2. Locate the Vendor entry you want to edit and click on it.
+---
 
-3. Edit the properties as needed, such as the Vendor Name.
+## Deleting a Vendor Entry
+<Warning>
+  Please be aware that deleting a "Vendor" is permanent and cannot be undone. Make sure you no longer need the item before proceeding with the deletion.
+</Warning>
 
-4. Remember to save your changes by clicking the "Save" button.
+If you need to remove a "Vendor" from your website's footer or sidebar, follow these steps:
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on "Vendor" in the list of content types.
+  </Step>
+  <Step title="Select Vendor to Delete">
+    You'll see a list of existing Vendors. Locate the method you want to delete and click on it.
+  </Step>
+  <Step title="Delete Vendor">
+    In the Vendor's detail view, find the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    Confirm the deletion when prompted.
+  </Step>
+</Steps>
 
-## 4. Deleting a Vendor Entry
-
-If you need to remove a "Vendor Entry" from your website's slider, follow these steps:
-
-1. In the Content Manager, find and click on "Vendors" in the list of content types.
-
-2. You'll see a list of existing Vendor Entries. Locate the entry you want to delete and click on it.
-
-3. In the Vendor Entry's detail view, find the "Delete" or "Trash" button.
-
-4. Confirm the deletion when prompted.
-
-Please be aware that deleting a "Vendor Entry" is permanent and cannot be undone. Make sure you no longer need the entry before proceeding with the deletion.
-
-5. The updated content will be reflected on your website right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
 
 By following these steps, you can efficiently manage your website's vendor slider by removing any entries that are no longer relevant or needed.
 

@@ -5,6 +5,11 @@ title: Casino Page
 
 Casino Items are used to manage various elements on your casino page. You can choose different types of content for these items, each with its unique display style. This guide will help you understand how to use the "CasinoItems" content type effectively.
 
+
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
+
 ## Table of Contents
 
 - [1. Understanding how the Casino Item works](#understanding-how-the-casino-items-works)
@@ -65,7 +70,7 @@ The "CasinoItems" content type is a versatile way to manage various elements on 
   <Accordion title="Game Category">
     Select this option if you want to create a custom slider with games based on the EveryMatrix game group. If you choose this option, additional fields are required:
     <ul>
-      <li>**GameCategory**: Specify the EveryMatrix Game Group for this custom slider.</li>
+      <li>**EM_GameGroup**: Specify the EveryMatrix Game Group for this custom slider.</li>
       <li>**SeeMorePath**: Define the path to see more details about the games in this category.</li>
     </ul>
     <h3>The following screenshot is just an example of a game category</h3>
@@ -90,52 +95,89 @@ The "Position" field uses the drag and drop plugin to determine the order of ite
 
 By using the "CasinoItems" content type with these fields, you can effectively manage and arrange various content elements on your casino page to provide an engaging and informative experience for your users.
 
+
+---
+
 ## 2. Creating a New Casino Item
 
 To add a new item to your casino page, follow these steps:
 
-1. In the Content Manager, locate and click on "CasinoItems" in the list of content types.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, locate and click on "CasinoItems" in the list of content types.
+  </Step>
+  <Step title="Create a New Casino Item">
+    You'll see a list of existing Casino Items. To create a new one, click the "Add New Casino Item" button.
+  </Step>
+  <Step title="Fill in Details">
+    Fill in the following details for your new item:
+    - **Type**: Select the type of content you want to add. Options include EGT Jackpot, Manhattan Jackpot, Popular Matches, Promotion Slider, Top Winners, Carousel, or Game Category. If you choose "Game Category," additional fields are required.
+    - **Title**: Enter the title to be displayed for the selected card type from the "Type" dropdown.
+    - **Icon** (Optional): Add an icon that will be displayed before the title.
+    - **Position**: Specify the order in which this item should appear on your casino page.
+    - If you selected "Game Category," you need to provide:
+      - **EM_GameGroup**: Specify the EveryMatrix Game Group for this custom slider.
+      - **SeeMorePath**: Define the path to see more details about the games in this category.
+  </Step>
+  <Step title="Save Your Casino Item">
+    After filling in the information, click the "Save" button to create the new Casino Item.
+  </Step>
+</Steps>
 
-2. You'll see a list of existing Casino Items. To create a new one, click the "Add New Casino Item" button.
 
-3. Fill in the following details for your new item:
-
-   - **Type**: Select the type of content you want to add. You can choose from options like EGT Jackpot, Manhattan Jackpot, Popular Matches, Promotion Slider, Top Winners, Carousel, or Game Category. If you choose "Game Category," additional fields are required.
-
-   - **Title**: Enter the title to be displayed for the selected card type from the "Type" dropdown.
-
-   - **Icon** (Optional): You can add an icon that will be displayed before the title.
-
-   - **Position**: Specify the order in which this item should appear on your casino page.
-
-   - If you selected "Game Category," you need to provide:
-     - **GameCategory**: Specify the EveryMatrix Game Group for this custom slider.
-     - **SeeMorePath**: Define the path to see more details about the games in this category.
-
-4. After filling in the information, click the "Save" button to create the new Casino Item.
+---
 
 ## 3. Editing an Existing Casino Item
 
 If you need to make changes to an existing Casino Item, follow these steps:
 
-1. In the Content Manager, find and click on "CasinoItems" in the list of content types.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on "CasinoItems" in the list of content types.
+  </Step>
+  <Step title="Select Item to Edit">
+    You'll see a list of existing Casino Items. Locate the item you want to edit and click on it.
+  </Step>
+  <Step title="Edit Item Properties">
+    Once you've selected the item, you can edit the properties as needed:
+    - **Type**: Update the type of content for this item by selecting a different option from the "Type" dropdown.
+    - **Title**: Edit the title displayed for this item.
+    - **Icon**: Update the icon or remove it if it's no longer needed.
+    - **Position**: Modify the order in which this item appears on the casino page.
+    - If the item is of "Game Category" type, remember to update the "EM_GameGroup" and "SeeMorePath" fields.
+  </Step>
+  <Step title="Save Your Edits">
+    After making your edits, remember to save your changes by clicking the "Save" button.
+  </Step>
+</Steps>
 
-2. You'll see a list of existing Casino Items. Locate the item you want to edit and click on it.
+---
 
-3. Once you've selected the item, you can edit the properties as needed:
 
-   - **Type**: You can update the type of content for this item by selecting a different option from the "Type" dropdown.
+## Deleting a  Casino Item
+<Warning>
+  Please be aware that deleting a Casino Item" is permanent and cannot be undone. Make sure you no longer need the item before proceeding with the deletion.
+</Warning>
 
-   - **Title**: Edit the title displayed for this item.
+If you need to remove a "Casino Item" from your  live casino page, follow these steps:
 
-   - **Icon**: You can update the icon or remove it if it's no longer needed.
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on "CasinoItem" in the list of content types.
+  </Step>
+  <Step title="Select Item to Delete">
+    You'll see a list of existing Burger Menu Items. Locate the item you want to delete and click on it.
+  </Step>
+  <Step title="Find the Delete Button">
+    In the item's detail view, find the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    Confirm the deletion when prompted. Please be aware that deleting a "Casino Item" is permanent and cannot be undone. Make sure you no longer need the item before proceeding with the deletion.
+  </Step>
+</Steps>
 
-   - **Position**: Modify the order in which this item appears on the casino page.
-
-   - If the item is of "Game Category" type, remember to update the "GameCategory" and "SeeMorePath" fields.
-
-4. After making your edits, remember to save your changes by clicking the "Save" button.
-
-5. The updated content will be reflected on your casino page right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
 
 By following these steps, you can easily edit existing Casino Items to keep your casino page informative and engaging for your users.
