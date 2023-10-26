@@ -47,6 +47,8 @@
         "content-types/faq",
         "content-types/casinocategory",
         "content-types/livecasinocategory",
+        "content-types/contact",
+        "content-types/promotions",
         {
           "group": "Reorder html content",
           "pages": [
