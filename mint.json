@@ -43,6 +43,8 @@
         "content-types/paymentmethods",
         "content-types/vendors", 
         "content-types/socialItems", 
+        "content-types/staticpage", 
+        "content-types/faq",
         {
           "group": "Reorder html content",
           "pages": [

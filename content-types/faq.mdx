@@ -1,0 +1,205 @@
+---
+title: FAQ
+---
+# Managing FAQ in Strapi CMS
+
+The FAQ content type in Strapi CMS is designed to manage frequently asked questions for your website. This content type allows you to organize FAQs into categories and subcategories, making it easy to provide structured and helpful information to your users. Each FAQ entry typically includes a title, slug URL for SEO-friendly links, and questions with detailed answers. By using the FAQ content type, you can efficiently maintain and display informative FAQs on your website, enhancing user experience and addressing common queries.
+
+## Quick example of how it works
+<iframe src="https://www.youtube.com/embed/gC1VH8aVCPg" style={{width:"100%", height: "25vw"}}> </iframe>
+---
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
+## Table of Contents
+
+- [Creating a New Category](#creating-a-new-category)
+- [Creating a New Subcategory](#creating-a-new-subcategory)
+- [Creating a New Question](#creating-a-new-question)
+- [Modifying a Category](#modifying-a-category)
+- [Modifying a Subcategory](#modifying-a-subcategory)
+- [Modifying a Question](#modifying-a-question)
+- [Deleting Entries](#deleting-entries)
+
+## Creating a New Category
+
+To add a new category to the FAQ page, follow these steps:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select 'FAQ' Content Type">
+    In the Content Manager, find and select the "FAQ" content type.
+  </Step>
+  <Step title="Create a New Category">
+    Click the "Add New Entry" button to create a new category.
+  </Step>
+  <Step title="Fill in Category Details">
+    Fill in the "Title" and fields for your new category.
+    <Accordion title="See live example">
+      <Warning>
+        Doing just this will create a new category with no subcategories or questions
+      </Warning>
+      <Frame>
+        <img src="/images/content-types/faq-new-category.gif" style={{ borderRadius: '0.5rem' }} />
+      </Frame>
+    </Accordion>
+  </Step>
+  <Step title="Save Your Category">
+    Click the "Save changes" button to create the category.
+  </Step>
+</Steps>
+## Creating a New Subcategory
+
+To add a subcategory under a category, proceed as follows:
+
+---
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Find Your Category">
+    In the Content Manager, find and click on the category where you want to add a subcategory.
+  </Step>
+  <Step title="Add a New Subcategory">
+    Scroll down and click the "Add New Entry" button.
+  </Step>
+  <Step title=" Enter Subcategory Title">
+    Enter the title for your new subcategory.
+    <Accordion title="See live example">
+      <Warning>
+        Doing just this will create a new category with no questions
+      </Warning>
+      <Frame>
+        <img src="/images/content-types/faq-new-subcategory.gif" style={{ borderRadius: '0.5rem' }} />
+      </Frame>
+    </Accordion>
+  </Step>
+  <Step title="Save Your Subcategory">
+    Click the "Save" button to create the subcategory.
+  </Step>
+</Steps>
+
+---
+
+
+## Creating a New Question
+
+To add a question to a subcategory, use these instructions:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Find Your Subcategory">
+    In the Content Manager, select the subcategory to which you want to add a question.
+  </Step>
+  <Step title="Add a New Question">
+    Click the "Add New Entry" button.
+  </Step>
+  <Step title="Enter Question Details">
+    Fill in the "Title" and "Description" fields for your new question.
+  </Step>
+  <Step title="Save Your Question">
+    Click the "Save" button to create the question.
+  </Step>
+</Steps>
+
+---
+
+
+## Modifying a Category
+
+To edit an existing category, follow these steps:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select Category to Modify">
+    In the Content Manager, click on the category you want to make changes to.
+  </Step>
+  <Step title="Edit Category Details">
+    Make the necessary changes to the "Title" fields as needed.
+  </Step>
+  <Step title="Save Your Changes">
+    Click the "Save" button to update the category.
+  </Step>
+</Steps>
+
+---
+
+
+## Modifying a Subcategory
+
+To edit a subcategory, do the following:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select Parent Category">
+    In the Content Manager, choose the category that contains the subcategory you want to modify.
+  </Step>
+  <Step title="Edit Subcategory">
+    Locate the subcategory and, if necessary, update the title.
+  </Step>
+  <Step title="Save Your Changes">
+    Click the "Save" button to update the subcategory.
+  </Step>
+</Steps>
+
+---
+
+
+## Modifying a Question
+
+To edit a question within a subcategory, use the following steps:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select Parent Subcategory">
+    In the Content Manager, choose the subcategory that contains the question you want to modify.
+  </Step>
+  <Step title="Edit Question">
+    Find the question and update the "Title" and "Description" fields as necessary.
+  </Step>
+  <Step title="Save Your Changes">
+    Click the "Save" button to save your edits.
+  </Step>
+</Steps>
+
+---
+
+## Deleting Entries
+
+To delete categories, subcategories, or questions, take the following precautions:
+<Warning>
+  Please be aware that deleting a category will delete all subcategories related to it and all questions related to it
+</Warning>
+<Warning>
+  Please be aware that deleting a subcategory will delete all questions related to it
+</Warning>
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Locate and Click on Item to Delete">
+    In the Content Manager, find and click on the item you wish to delete.
+  </Step>
+  <Step title="Delete the Item">
+    In the item's detail view, look for the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    When prompted, confirm the deletion. Please note that this action is permanent and cannot be undone. Ensure that you no longer need the item before confirming the deletion.
+  </Step>
+</Steps>
+<Tip>
+  The updated content will be reflected in the burger menu right away. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
+
+By following these steps, you can efficiently manage and organize the FAQ page content using Strapi CMS.
