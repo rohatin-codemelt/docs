@@ -45,6 +45,8 @@
         "content-types/socialItems", 
         "content-types/staticpage", 
         "content-types/faq",
+        "content-types/casinocategory",
+        "content-types/livecasinocategory",
         {
           "group": "Reorder html content",
           "pages": [
