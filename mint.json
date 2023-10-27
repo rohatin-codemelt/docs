@@ -49,6 +49,8 @@
         "content-types/livecasinocategory",
         "content-types/contact",
         "content-types/promotions",
+        "content-types/mobilenavigation",
+        "content-types/gamerule",
         {
           "group": "Reorder html content",
           "pages": [
