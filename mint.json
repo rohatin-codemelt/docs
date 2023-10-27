@@ -52,6 +52,14 @@
         "content-types/mobilenavigation",
         "content-types/gamerule",
         {
+          "group": "Banners",
+          "pages": [
+            "content-types/homepagebanners",
+            "content-types/casinobanners",
+            "content-types/livecasinobanners"
+          ]
+        },
+        {
           "group": "Reorder html content",
           "pages": [
             "content-types/casinoitems",
