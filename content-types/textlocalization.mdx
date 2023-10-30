@@ -1,0 +1,142 @@
+---
+title: Multi Language support
+---
+
+# Introduction
+
+TextLocalization is a powerful feature in Strapi that allows you to manage and customize text content for different languages across your website. This guide will walk you through handling text data, adding new translations, removing text elements, adding new languages, and editing existing text content.
+
+## How to Handle the Data
+
+In Strapi, TextLocalization is a content type designed for handling small texts, such as button labels, pop-up messages, and various other text elements on your website. It ensures that these texts can be easily translated into multiple languages, making your website accessible to a broader audience.
+
+## How the Data is Displayed
+
+The text content managed through TextLocalization is dynamically displayed on your website based on the chosen language or locale. When a user selects a specific language, the corresponding text content will be presented to them.
+Here you can find a table with visual reference for each key that is used on the website
+<Tabs>
+  <Tab title="1">
+    <Frame style={{ flex: 1 }}>
+      <img src="/images/content-types/textlocalization/1.png" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Tab>
+  <Tab title="2">
+    <Frame style={{ flex: 1 }}>
+      <img src="/images/content-types/textlocalization/1.png" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Tab>
+  <Tab title="3">
+    <Frame style={{ flex: 1 }}>
+      <img src="/images/content-types/textlocalization/1.png" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Tab>
+</Tabs>
+## Adding New TextLocalization
+
+To add a new text element or translation:
+
+<Steps>
+  <Step title="Navigate to the Content Manager">
+    Log in to your Strapi CMS account and navigate to the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select 'TextLocalization'">
+    In the Content Manager, find and click on "TextLocalization" in the list of content types.
+  </Step>
+  <Step title="Create a New TextLocalization">
+    To add a new text element or translation, click the "Add New TextLocalization" button.
+  </Step>
+  <Step title="Fill in LocaleId">
+    In the "LocaleId" field, enter a unique identifier that references the text content. For example, use "common.login" for the login button text.
+  </Step>
+  <Step title="Enter Text Content">
+    Enter the text content in the "Value" field.
+  </Step>
+  <Step title="Add Description (Optional)">
+    Optionally, you can provide a description in the "Description" field for reference.
+  </Step>
+  <Step title="Save Your Changes">
+    After configuring the translation, click the "Save" button to create the new text element.
+  </Step>
+</Steps>
+
+
+## Removing TextLocalization
+
+To remove a text element or translation:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and navigate to the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select 'TextLocalization'">
+    In the Content Manager, find and click on "TextLocalization" in the list of content types.
+  </Step>
+  <Step title="Locate the Text Element to Delete">
+    You'll see a list of existing text elements. Click on the element you want to delete.
+  </Step>
+  <Step title="Delete the Text Element">
+    In the element's detail view, look for the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    When prompted, confirm the deletion. Please note that deleting a text element is permanent and cannot be undone.
+  </Step>
+</Steps>
+
+
+## Adding a New Language for TextLocalization
+
+If you need to add support for a new language:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and navigate to the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Select 'TextLocalization'">
+    In the Content Manager, find and click on "TextLocalization" in the list of content types.
+  </Step>
+  <Step title="Locate the Element">
+    Locate the element to which you want to add a new language.
+  </Step>
+  <Step title="Change Locale Language">
+    In the right menu, change the locale language to the desired one.
+  </Step>
+  <Step title="Enter Text Content">
+    Enter the text content for this language in the "Value" field.
+  </Step>
+  <Step title="Optional: Add Description">
+    Optionally, you can provide a description in the "Description" field for reference.
+  </Step>
+  <Step title="Save Your Changes">
+    After entering the language details, click the "Save" button to add the new language.
+  </Step>
+</Steps>
+
+
+## Editing TextLocalization
+
+To edit an existing text element:
+
+<Steps>
+  <Step title="Access the Content Manager">
+    Log in to your Strapi CMS account and access the Content Manager.
+  </Step>
+  <Step title="Select 'TextLocalization'">
+    In the Content Manager, find and select "TextLocalization" from the list of content types.
+  </Step>
+  <Step title="Locate the Text Element">
+    Locate the text element that you want to modify.
+  </Step>
+  <Step title="Edit Text Content">
+    Click on the element's title to open its detail view. Then, edit the text content in the "Value" field as needed.
+  </Step>
+  <Step title="Optional: Update Description">
+    Optionally, you can update the description in the "Description" field for reference.
+  </Step>
+  <Step title="Save Your Changes">
+    After making the desired modifications, click the "Save" button to save your changes.
+  </Step>
+</Steps>
+
+# Conclusion
+
+TextLocalization in Strapi is a valuable tool for managing and customizing text content in multiple languages. By following the steps outlined in this guide, you can easily add, edit, and delete text elements, as well as introduce new languages to enhance the multilingual capabilities of your website.

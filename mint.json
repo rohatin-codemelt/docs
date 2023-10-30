@@ -51,6 +51,7 @@
         "content-types/promotions",
         "content-types/mobilenavigation",
         "content-types/gamerule",
+        "content-types/textlocalization",
         {
           "group": "Banners",
           "pages": [
