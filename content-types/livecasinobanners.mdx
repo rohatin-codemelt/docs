@@ -22,41 +22,76 @@ In Strapi's Content Manager, banners are organized, making it easy to add, edit,
 
 To add a new banner in Strapi:
 
-1. Log in to your Strapi CMS account.
+<Steps>
+  <Step title="Navigate to the Content Manager by clicking 'Content Manager' in the dashboard sidebar.">
+    This is where you can manage your content types in Strapi CMS.
+  </Step>
+  <Step title="Find and select 'LiveCasinoBanner' in the list of content types.">
+    This will allow you to work with the Live Casino Banners.
+  </Step>
+  <Step title="Create a New Banner Entry">
+    To add a new banner, click the "Create New Entry" button.
+  </Step>
+  <Step title="Fill in Banner Details">
+    Enter the banner details:
+    - **Title**: The title for your banner.
+    - **URL**: The path to which the banner should navigate.
+    - **Start Date**: If not completed, it will default to the current time.
+    - **End Date**: If not present, it will be set to ten years from now.
+    - **Position**: Order of items.
+    - **Color**: Used internally for organizational purposes.
+    - **Banner Desktop**: Upload the banner image for desktop displays.
+    - **Banner Mobile**: Upload the banner image for mobile displays.
+    - **Ten Years From Now**: Check this if the banner should be displayed indefinitely.
+  </Step>
+  <Step title="Save Your New Banner Entry">
+    After entering all the information, save your new banner entry.
+  </Step>
+</Steps>
 
-2. Navigate to the Content Manager by clicking "Content Manager" in the dashboard sidebar.
-
-3. Find and select "LiveCasinoBanner" in the list of content types.
-
-4. Click the "Create new Entry" button to create a new banner entry.
-
-5. Fill in the banner details, including the title, URL, start date, end date, position, color, and images for desktop and mobile displays.
-
-6. If the banner is meant to be displayed indefinitely, mark the "Ten Years From Now" checkbox.
-
-7. Save your new banner entry.
 
 ## Scheduling Publication and Unpublication
 
 Strapi's Publisher plugin allows you to schedule when banners should be published and unpublished. Here's how to do it:
 
-1. In the banner detail view, locate the "Publishing" section.
+<Steps>
+  <Step title="Navigate to the Banner Detail View">
+    Once you've selected the banner you wish to schedule, go to its detail view.
+  </Step>
+  <Step title="Access the 'Publishing' Section">
+    In the banner detail view, locate the "Publishing" section.
+  </Step>
+  <Step title="Set the 'Publish At' Date and Time">
+    In the "Publishing" section, specify the date and time when you want the banner to go live.
+  </Step>
+  <Step title="Set the 'Unpublish At' Date and Time">
+    Similarly, in the "Publishing" section, indicate the date and time when you want the banner to be removed from the platform.
+  </Step>
+  <Step title="Save Your Changes">
+    After setting the publishing and unpublishing schedule, save your changes. The banner will automatically follow the schedule you've defined.
+  </Step>
+</Steps>
 
-2. Set the "Publish at" date and time to specify when the banner should go live.
-
-3. Set the "Unpublish at" date and time to indicate when the banner should be removed from the platform.
-
-4. Save your changes. The banner will be automatically published and unpublished according to the schedule you've set.
 
 ## Hiding a Banner
 
 To temporarily hide a banner without deleting it:
 
-1. In the banner detail view, locate the "Publishing" section.
+<Steps>
+  <Step title="Open the Banner Detail View">
+    First, open the detail view of the banner you wish to hide.
+  </Step>
+  <Step title="Access the 'Publishing' Section">
+    In the banner detail view, locate the "Publishing" section.
+  </Step>
+  <Step title="Clear the 'Publish At' and 'Unpublish At' Dates">
+    Within the "Publishing" section, clear the dates in the "Publish at" and "Unpublish at" fields. This action effectively hides the banner from the platform.
+  </Step>
+  <Step title="Save Your Changes">
+    After clearing the dates, save your changes. The banner will not be displayed on the platform until you reschedule its publication.
+  </Step>
+</Steps>
 
-2. Clear the "Publish at" and "Unpublish at" dates. This effectively hides the banner.
-
-3. Save your changes. The banner will not be displayed on the platform until you reschedule its publication.
 
 ## Reordering Banners
 
@@ -66,24 +101,46 @@ Strapi makes it easy to change the order of banners using a simple drag-and-drop
 
 To remove a banner:
 
-1. In the Content Manager, locate the banner you wish to delete.
+<Steps>
+  <Step title="Access the Content Manager">
+    First, log in to your Strapi CMS account and access the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Locate the Banner to Delete">
+    In the Content Manager, locate the banner you wish to delete.
+  </Step>
+  <Step title="Open the Banner Detail View">
+    Click on the banner's title to open its detail view.
+  </Step>
+  <Step title="Delete the Banner">
+    Within the banner's detail view, find the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    When prompted, confirm the deletion. Be aware that this action is permanent and cannot be undone.
+  </Step>
+</Steps>
 
-2. Click on the banner's title to open its detail view.
-
-3. In the banner detail view, find the "Delete" or "Trash" button.
-
-4. Confirm the deletion when prompted. Note that this action is permanent and cannot be undone.
 
 ## Updating a Banner
 
 If you need to modify a banner's content or attributes:
 
-1. In the Content Manager, locate the banner you want to update.
+<Steps>
+  <Step title="Access the Content Manager">
+    Start by logging in to your Strapi CMS account and accessing the Content Manager by clicking "Content Manager" in the dashboard sidebar.
+  </Step>
+  <Step title="Locate the Banner to Update">
+    Within the Content Manager, locate the banner you wish to update.
+  </Step>
+  <Step title="Access the Banner Detail View">
+    Click on the banner's title to access its detail view.
+  </Step>
+  <Step title="Edit Banner Details">
+    While in the banner's detail view, make any necessary edits to the banner's details, such as the title, URL, schedule, position, or images.
+  </Step>
+  <Step title="Save Your Changes">
+    Be sure to save your changes to update the banner with the new information.
+  </Step>
+</Steps>
 
-2. Click on the banner's title to access its detail view.
-
-3. Edit the banner's details as needed, including title, URL, schedule, position, and images.
-
-4. Save your changes to update the banner.
 
 Managing banners in Strapi CMS is a flexible and efficient process that allows you to keep your platform's promotional content organized and up-to-date.
