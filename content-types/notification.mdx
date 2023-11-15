@@ -1,0 +1,92 @@
+---
+title: Notification
+---
+# Managing Notification in Strapi CMS
+
+Notifications are messages that inform users about important events, updates, or actions they need to take. This system is designed to enhance user engagement and communication by delivering timely and relevant information.
+
+<div style={{ display: 'flex', flexDirection: 'row' }}>
+  <Frame style={{ flex: 1 }}>
+   <img src="/images/content-types/notification1.png" style={{ borderRadius: '0.5rem' }} />
+  </Frame>
+  <Frame style={{ flex: 1 }}>
+   <img src="/images/content-types/notification2.png" style={{ borderRadius: '0.5rem' }} />
+  </Frame>
+</div>
+
+## Accessing Content Manager
+
+To manage Payment Methods, you need to access the Content Manager in Strapi. Here's how you can get there:
+
+1. Log in to your Strapi CMS account.
+
+2. In the dashboard, click on "Content Manager" in the sidebar.
+
+## Creating a Notification
+
+To add a new payment method to your website, follow these steps:
+
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, locate and click on "Notification" in the list of content types.
+  </Step>
+  <Step title="Create a New Notification">
+    You'll see a list of existing Notifications. To create a new one, click the "Add New Notification" button.
+  </Step>
+  <Step title="Fill in Notification">
+    Fill in the following details for your new notification:
+    - **Title**: Enter the title of the notification.
+    - **Type**: Select what type of notification you want to send to the user from the dropdown. You can choose: Saint Names, User Roles, Specific Users, Specific List, New Promotions, Birthday Notifications, Notifications for all users, Sport Matches/Events Notifications.
+    - **Image**: Upload an image to serve as a thumbnail after the title.
+    - **Description**: This will be the description of the notification.
+    - ***AdditionalData**: This will be a dynamic field placed at the bottom. It will be described in detail below.
+  </Step>
+    <Step title="Additional Data">
+    To insert an additional data field press the plus button and select one of the following for each use case:
+    - **SaintNames**: This field will be added when the 'Saint Names' type is selected. After selecting it you can add multiple names and send the notification to them.
+    - **UserRoles**: This field will be added when the 'User Roles' type is selected. After selecting it you will find a dropdown with all possible user roles. You can choose multiple user roles to send the notification.
+    - **SpecificUser**: This field will be added when the 'Specific User' type is selected. After selecting it you will enter the ID of the user you want to send the notification.
+    - **SpecificList**: This field will be added when the 'Specific List' type is selected. After selecting it you will enter a list of IDs for the users you want to send the notification.
+    - **NewPromotion**: This field will be added when the 'New Promotions' type is selected. After selecting it you will find a dropdown with all promotions available in the CMS. You can choose multiple promotions to send the notification to all the users. *The data that you will get from each promotion will be the name and description.
+    - **SportEvents**: This field will be added when the 'Sports Matches/Events Notifications' type is selected. Here you can add a description of the event in the field "DisplayText" and an "URL" to navigate to the event route on the website. This notification will be sent to all users.
+    <Warning>
+      Select an "AdditionalData" field only when you need one of those described above. For the rest of them don't select an "AdditionalData" field. You can have only one additional data field for one notification.
+    </Warning>
+  </Step>
+  <Step title=" Format and Style Content">
+    Use the rich text editor to format and style your content:
+    - **Content**: In the rich text editor, you can edit text content, change font size, apply text formatting (e.g., bold, italics), and even select text colors. The editor provides a toolbar with various text editing options to make your content visually appealing.
+  </Step>
+  <Step title="Save Your Notification">
+    After filling in the information, click the "Save" button to create the new Payment Method.
+  </Step>
+</Steps>
+
+## Deleting a Notification
+<Warning>
+  Please be aware that deleting a " Notification" is permanent and cannot be undone. Make sure you no longer need the item before proceeding with the deletion.
+</Warning>
+
+
+If you need to remove a " Notification" from your website, follow these steps:
+
+<Steps>
+  <Step title="Access Content Manager">
+    In the Content Manager, find and click on " Notification" in the list of content types.
+  </Step>
+  <Step title="Select Notification to Delete">
+    You'll see a list of existing  Notification. Locate the method you want to delete and click on it.
+  </Step>
+  <Step title="Delete  Notification">
+    In the  Notification's detail view, find the "Delete" or "Trash" button.
+  </Step>
+  <Step title="Confirm Deletion">
+    Confirm the deletion when prompted.
+  </Step>
+</Steps>
+
+<Tip>
+  The updated content will be reflected in notification modal in aprox. 1 minute. If it's not updating, you can perform a hard reload by pressing "Ctrl + Shift + R."
+</Tip>
+
+By following these steps, you can easily edit existing Notification.
