@@ -1,0 +1,53 @@
+---
+title: 'CMS guideline'
+---
+# Strapi CMS Project - Feature Development Guide
+
+## Introduction
+
+This guide is intended to assist developers in understanding how to develop new features in our Strapi project, focusing on our usage of a headless CMS.
+
+## What is a Headless CMS
+A headless CMS is a content management system that provides an interface for creating and managing content but does not have a front-end system to display it. It allows for greater flexibility in delivering content to various platforms and devices.
+
+## Running the Project Locally
+
+### Setting Up the .env File
+Ensure that the .env file is properly set up with all the necessary environment variables.
+
+### Installing Dependencies for Plugins
+<Steps>
+<Step title="Navigate to Plugins Folder">
+Go to the plugins folder in your project directory.
+</Step>
+<Step title="Install Dependencies">
+Run the command to install dependencies for each plugin. Recommended command `yarn install` or `yarn` using `node version 18`
+</Step>
+</Steps>
+
+### Building and Running Docker Compose
+<Code language="bash">
+docker-compose build
+docker-compose up
+</Code>
+
+## Modifying Strapi Lifecycles
+Strapi provides several lifecycle hooks like `beforeUpdate` and `beforeCreate` that allow you to execute custom logic.
+
+## Handling 'Position' Property in Content Types
+For content types with a 'position' property, add the following code:
+
+````typescript
+const { params, model } = event
+const collectionId = model.uid
+const { data } = params
+const maxPosition = (await strapi.db.query(collectionId).findOne({
+  select: ['position'],
+  where: { locale: data.locale },
+  orderBy: { position: 'desc' },
+  limit: 1
+}))?.position
+````
+
+## Creating New Collections or Single Types
+Whenever a new collection or single type is created, ensure to update the documentation for the marketing team to reflect these changes.

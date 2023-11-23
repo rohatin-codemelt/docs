@@ -72,15 +72,15 @@
       ]
     },
     {
-      "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Developer references",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        {
+        "group": "Devops Documentation",
+        "pages": ["api-reference/devops/commonknowledge","api-reference/devops/backend", "api-reference/devops/cms"]
+        },
+        "api-reference/backend",
+        "api-reference/cms",
+        "api-reference/guideline"
       ]
     }
   ]

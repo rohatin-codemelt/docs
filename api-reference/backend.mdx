@@ -1,0 +1,200 @@
+---
+title: 'Backend guideline'
+---
+
+# Nest.js Project - Feature Development Guide
+
+## Introduction
+
+This guide is designed to assist developers in understanding and implementing new features in our Nest.js project.
+
+## Understanding Modules in Nest.js
+[Modules](https://docs.nestjs.com/modules) are the fundamental building blocks of a Nest.js application. They encapsulate providers and controllers to organize the codebase.
+
+## Current modules breakdown
+<Tabs>
+  <Tab title="Exclusion">
+    ### This module is responsible for the self exclusion feature
+    When a user makes a request in the web application we save his request, sending him a confirmation email, followed by an email sent after 24 hours containg a link to deactivate his account
+    <br/> <br/> The business logic for the cron jobs can be found at `src/exclusion/businesslogic.cron.ts`
+    <br/> <br/> The logic for the service file can be found at `src/exclusion/exclusion.service.ts`, the service file is responsible for creating new exclusion requests, updating existing requests, fetching requests by the hash provided in the link
+  </Tab>
+  <Tab title="Notification">
+    ### This module is responsible for showing user notifications in the platform only once.
+    The content displayed in the notiifcation is fetched from the cms by a webhook. The cms sends a post request verified by an api key that needs to match with the backend api key
+    <br/> <br/> When a new notification is added on our backend we have a [Subscriber](https://docs.nestjs.com/techniques/database#subscribers) `matchusers.subscriber.ts` that publishes a new job using Bull on redis to check eligible users for the notification
+    <br/> <br/> the logic for eligible users can be found at `src/notifications/helpers/businesslogic.ts`
+    <br/> <br/> the logic for the service file can be found at `src/notifications/noification.service.ts`, the service file is responsible for fetching new data from the cms, parsing it, saving in the database and updating read or unread notifications
+  </Tab>
+  <Tab title="Everymatrix">
+    ### This module is responsible for making requests to the everymatrix api
+    ```typescript
+    //this is the function that gets externalised, it fetches the user profile for a list of users
+    public getListOfUsers = async (userIds: number[], sessionId: string): Promise<UserDTO[]> => {}
+
+    //this function defines the logic for fetching the users
+    private getUsersList = async ( userIds: number[], sessionId: string ): Promise<UserDTO[]> => {}
+
+    //this function logins the admin in the api to get an admin session id
+    public getSessionData = async (): Promise<SessionDataDTO | null> => {}
+
+    //this function fetches the user profile for a single userid
+    public getUserMetricsById = async ( userId: string, sessionId: string ): Promise<UserDTO | null> => {}
+
+    //this function self excludes an user
+    public excludeUser = async ( adminSession: string, userId: string, period: string ): Promise<boolean> => {}
+    ```
+  </Tab>
+  <Tab title="Mailer">
+   ### This module is responsible for sending email using SendGrid
+   In order to change the email template or add new ones modify the enum located at `src/mailer/mailer.enum.ts` 
+  </Tab>
+  <Tab title="Scheduler">
+   ### This module is reponsible for scheduling cron jobs accros the platform
+   you can find more details below
+  </Tab>
+  <Tab title="User">
+   ## This module is responsible for creating or updating users that are saved in our database for notifications
+   The logic for the cron job that checks for updates on user roles can be found at `businesslogic.cron.ts` located at `src/users/businesslogic.cron.ts`
+  </Tab>
+</Tabs>
+
+## General File Structure for Modules
+A typical module structure includes:
+- `MODULE_NAME.module.ts`: The module file itself.
+- `MODULE_NAME.service.ts`: Service file for business logic.
+- `ENTITY_NAME.entity.ts`: Entity file defining the data model.
+- `MODULE_SERVICE_NAME.service.ts`: Additional service files as needed.
+<Warning>
+  After creating a new module it must be inserted in the `app.module.ts` file
+</Warning>
+
+## Dependency Injection in Nest.js
+Dependency Injection (DI) is a design pattern used in Nest.js to increase modularity and flexibility, allowing classes to receive dependencies from external sources rather than creating them.
+Learn more about [Dependecy injection](https://docs.nestjs.com/fundamentals/custom-providers)
+
+## Repositories in TypeORM
+[Repositories](https://docs.nestjs.com/recipes/sql-typeorm#repository-pattern) are abstractions on top of the entity manager, providing additional methods for working with entities. They are used for data persistence and retrieval.
+
+## Understanding Auth Guards
+[Auth guards](https://docs.nestjs.com/guards) are used in Nest.js to protect routes and ensure that only authenticated users can access certain endpoints.
+
+## EveryMatrix Auth Guard
+The EveryMatrix auth guard checks the `session-id` and `user-id` against the EveryMatrix system for authenticated routes.
+````typescript
+class UserAuthGuard implements CanActivate {
+  private readonly apiUrl: string
+  public constructor() {
+    if (!process.env.NORWAY_API_URL) { //saving the EM api URL
+      throw new Error('Norway API url is not defined (NORWAY_API_URL)')
+    }
+    this.apiUrl = process.env.NORWAY_API_URL
+  }
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    //fetching the session details for the user making the request
+    const apiUrl = `${this.apiUrl}/v1/player/session/player` 
+    const request = context.switchToHttp().getRequest()
+    const sessionId = request.headers['session-id']
+    const userId = request.headers['user-id']
+    const { data } = await axios.get(apiUrl, {
+      headers: { 'X-SessionId': sessionId }
+    })
+    // Compare the header values
+    if (userId == data.UserID) {
+      return true // Allow the request to proceed
+    } else {
+      throw new UnauthorizedException('Unauthorized') // Deny the request
+    }
+  }
+}
+````
+
+## Creating New Entities and Migrations in TypeORM
+
+### Creating New Entities
+Entities in TypeORM represent tables in your database. To create a new entity in our Nest.js project:
+
+1. Create a new file in the `entities` folder, named `[ENTITY_NAME].entity.ts`.
+2. Define the entity class with `@Entity()` decorator and specify the table structure using various decorators like `@Column()`.
+
+### Generating Migrations
+[Migrations](https://docs.nestjs.com/techniques/database#migrations) are crucial for managing database schema changes. To generate a migration after creating or modifying entities:
+
+<Steps>
+<Step title="Creating Migrations Command">
+Use the command `npm run migration:generate -- [name] [output location]`, replacing `[name]` with the name for the migration file and `[output location]` with the path where you want the migration file to be saved.
+</Step>
+<Step title="Run the migrations">
+Use the provided command `npm run migration:run` to start the application locally.
+</Step>
+<Step title="Migration File Location">
+Generated migrations are saved in the `./src/database/migrations` directory.
+</Step>
+</Steps>
+
+
+## Running the Project Locally
+<Steps>
+<Step title="Install PostgreSQL and Redis">
+Ensure [PostgreSQL](https://www.postgresql.org/download/) and [Redis](https://redis.io/docs/install/) are installed on your local machine.
+</Step>
+<Step title="Clone and Install Dependencies">
+Clone the repository and install necessary dependencies using `npm` and `node version 18`
+</Step>
+<Step title="Run the Application">
+Use the provided command `npm run start:dev` to start the application locally.
+</Step>
+<Step title="Run the migrations">
+Use the provided command `npm run migration:run` to start the application locally.
+</Step>
+</Steps>
+
+## Using SendGrid API
+SendGrid API is used for handling email services. It requires proper setup and authentication to send emails.
+
+## Cron Jobs with Bull Queue
+Cron jobs in our project are managed using the Bull queue, which handles scheduled tasks efficiently while preventing multiple executions on the server.
+
+### Adding New Cron Jobs
+To add a new cron job:
+
+<Steps>
+<Step title="Add a new entry in the ScheduledJob enum">
+locate the file scheduler.enum.ts and a new entry containg the name for your new cron job. Naming convention is `cron-[NAME_FOR_CRON_JOB]`
+</Step>
+<Step title="Define the Job in SchedulerProcessor">
+Create a new method in the `SchedulerProcessor` class with the `@Process` decorator, specifying the job name and concurrency.
+</Step>
+<Step title="Example">
+```typescript
+@Process({
+  name: ScheduledJob.YourNewJob,
+  concurrency: 1
+})
+async handleYourNewJob(job: Job) {
+  // the business logic will be defined in another file and here just a method call
+  newFeatureBusinessLogic.yourNewJobLogic()
+}
+```
+</Step>
+</Steps>
+
+### Changing the Cron Interval for Jobs
+To change the cron interval:
+
+<Steps>
+<Step title="Modify the scheduleJob Method Call">
+In the `SchedulerService` class, update the cron expression in the `scheduleJob` method call for the respective job.
+</Step>
+<Step title="Example">
+```typescript
+await this.scheduleJob({
+  queue: this.cronJobQueue,
+  jobName: ScheduledJob.ExclusionFirstStep,
+  cron: 'New-Cron-Expression'
+})
+```
+</Step>
+</Steps>
+
+Note: Ensure the cron expression is valid and matches the required format.

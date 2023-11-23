@@ -1,0 +1,111 @@
+# Backend Architecture Documentation
+
+## Introduction
+
+This document provides a comprehensive guide on our backend architecture, which utilizes a combination of Nest.js, PM2, Redis, PostgreSQL, and an external CMS.
+
+## Our Architecture
+
+### Nest.js Web API
+Our main backend application is built using Nest.js, a progressive Node.js framework. It handles all our web API requests.
+
+### PM2
+PM2 is a process manager that keeps our Node.js applications alive forever and assists in managing application logging, monitoring, and clustering.
+
+### Redis Server
+We use an external Redis server for caching and session management. It communicates through a private network for enhanced security.
+
+### PostgreSQL Database
+Our primary data storage is a PostgreSQL database, also external and communicating through a private network.
+
+### Production CMS
+The backend interacts with a production CMS, which is external and communicates over a public network. This system manages content and user interactions.
+
+## Environment Variables
+
+### Changing the .env File
+<Steps>
+<Step title="Locate .env File">
+The .env file is located in the root directory of the project. Ensure you have the necessary permissions to edit it.
+</Step>
+<Step title="Edit .env File">
+Open the .env file in your preferred text editor and make the required changes.
+</Step>
+<Step title="Save Changes">
+After editing, save the file. Ensure no syntax errors are introduced.
+</Step>
+</Steps>
+
+### Changing the Password for Self-Exclusion Flow
+<AccordionGroup>
+<Accordion title="Editing the Self-Exclusion Password">
+1. Open the .env file.
+2. Locate the line that specifies the ADMIN_PASSWORD.
+3. Change the value to the new password.
+4. Save the file.
+</Accordion>
+<Accordion title="Editing the Self-Exclusion Email">
+1. Open the .env file.
+2. Locate the line that specifies the ADMIN_USERNAME.
+3. Change the value to the new password.
+4. Save the file.
+<Warning>
+The password must be changed every 30 days, this is a restriction from the EveryMatrix Backoffice
+</Warning>
+</Accordion>
+</AccordionGroup>
+
+## Deployment Process
+<Steps>
+<Step title="Push Changes to Repository">
+Ensure all changes are committed and pushed to the repository.
+</Step>
+<Step title="Run Deployment Script">
+Execute the `deploy.bash` file with `sudo` permissions to apply the changes to the system.
+</Step>
+</Steps>
+
+## Reloading Environment Variables
+<AccordionGroup>
+<Accordion title="Reloading .env Changes">
+If you need to reload the .env changes without restarting the server, follow these steps:
+1. Use PM2 to gracefully reload the application.
+2. This will ensure the new environment variables are loaded without downtime.
+</Accordion>
+</AccordionGroup>
+
+## Logs and Monitoring
+
+### Checking Logs with PM2
+Use the following command to view logs for a specific application:
+```bash
+pm2 logs [application-name]
+```
+
+### Filtering Logs with Grep
+To filter logs, you can pipe PM2 logs into grep:
+```bash
+pm2 logs [application-name] | grep [search-term]
+```
+
+## Database Migrations
+
+### Running Migrations
+<Steps>
+<Step title="Access the Server">
+SSH into the server where the database is hosted.
+</Step>
+<Step title="Run Migration Command">
+Navigate to the project directory and run the migration command `npm run migration:run`
+</Step>
+</Steps>
+
+### Reverting Migrations
+<Steps>
+<Step title="Access the Server">
+SSH into the server by accesing the hetzner web console or another desktop application of your choice
+</Step>
+<Step title="Run Revert Command">
+Use the command to revert the last applied migration by using `npm run migration:revert`
+</Step>
+</Steps>

@@ -1,0 +1,169 @@
+---
+title: 'Common Knowledge'
+---
+
+# Technical Documentation for System Operations
+
+Welcome to our system's technical documentation. This guide is designed to help you understand and operate the DevOps aspects of our system effectively.
+
+## Hetzner Private Network
+
+<AccordionGroup>
+  <Accordion title="What is a Private Network?">
+    A private network in Hetzner is a segregated network segment that is isolated from the public internet. This network is used for internal communication between servers.
+  </Accordion>
+  <Accordion title="Why Do We Use It?">
+    We use a private network to enhance security, reduce latency, and ensure private communication between our servers without exposure to external threats.
+  </Accordion>
+  <Accordion title="Benefits for Our System">
+    The private network provides a secure environment for our sensitive data and critical operations, ensuring that our services remain robust and reliable, preventing them from attacks by directly blocking external communications.
+  </Accordion>
+  <Accordion title="How to Create a New User from the WireGuard Admin Dashboard">
+    Creating a new user in WireGuard's admin dashboard involves a few steps. First, log in to the dashboard. Navigate to the 'Users' section, and click on 'Add User'. Fill in the necessary details and generate the user. This process will create new credentials for the user to connect to the private network.
+    <Frame>
+      <img src="/images/drag-and-drop.gif" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Accordion>
+  <Accordion title="How to Connect the File to WireGuard Desktop Application">
+    To connect a new user to the WireGuard desktop application, download the configuration file generated when you created the user. Open the WireGuard application, click on 'Add Tunnel', and then choose 'Import tunnel(s) from file'. Select the downloaded configuration file to establish the connection.
+    <Frame>
+      <img src="/images/drag-and-drop.gif" style={{ borderRadius: '0.5rem' }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Managing Environment Variables
+
+<Steps>
+<Step title="Understanding .env Files">
+Environment variables are stored in a `.env` file which contains key-value pairs. These variables are used to manage application configurations.
+The servers that use `.env` files are backend, cms prod and cms staging servers
+They are all stored in ``` ~/.env ```
+</Step>
+<Step title="Changing Variables">
+To change environment variables, use the nano editor to modify the `.env` file and then save the changes. Ensure you understand the impact of any changes made.
+</Step>
+</Steps>
+
+## How to use the PM2
+<AccordionGroup>
+<Accordion title="Starting an Application with PM2">
+To start an application with PM2, navigate to your application directory and run `pm2 start app.js`, replacing `app.js` with your main application file. This command will start your application and run it in the background.
+<Tip>
+Another option for starting already deployed apps is to run `pm2 reload APP_NAME`, replacing `APP_NAME` with your application name.
+</Tip>
+</Accordion>
+<Accordion title="Monitoring Applications">
+Use `pm2 list` to see a list of all applications being managed by PM2. This view provides details about the status of each application, such as online/offline, CPU usage, and memory consumption.
+</Accordion>
+<Accordion title="Managing Application Processes">
+To stop, restart, or delete an application, use the commands `pm2 stop <id>`, `pm2 restart <id>`, and `pm2 delete <id>`, respectively, where `<id>` is the ID or name of the application as listed in `pm2 list`.
+</Accordion>
+<Accordion title="Viewing Logs">
+For debugging, use `pm2 logs` to view logs of all applications. To see logs for a specific application, use `pm2 logs <id>`.
+</Accordion>
+</AccordionGroup>
+
+## How to use the Nano file editor
+<AccordionGroup>
+<Accordion title="Opening and Creating Files">
+To open a file with Nano, use the command `nano filename`, where `filename` is the name of the file you wish to edit. If the file does not exist, Nano will create it.
+</Accordion>
+<Accordion title="Basic Editing Commands">
+Use the arrow keys to navigate the cursor. To insert text, simply start typing. To delete text, use the backspace key.
+</Accordion>
+<Accordion title="Saving and Exiting">
+To save changes, press `Ctrl + O`, then press Enter. To exit Nano, press `Ctrl + X`. If you haven't saved your changes, Nano will ask if you want to save them before exiting.
+</Accordion>
+<Accordion title="Cutting, Copying, and Pasting Text">
+To cut a line, press `Ctrl + K`. To paste, move the cursor to the desired location and press `Ctrl + U`. Nano does not have a direct copy command, but you can cut and then immediately paste text to achieve a copy-like function.
+</Accordion>
+</AccordionGroup>
+
+## Deploying Changes from GitHub
+
+<Steps>
+<Step title="Pulling Changes">
+First, pull the latest changes from the GitHub repository to your local machine or server.
+</Step>
+<Step title="Running Deploy Script">
+Execute the `deploy.bash` file with `sudo` permissions to apply the changes to the system.
+<Tip>
+All `deploy.bash` files are located at `~/deploy.bash`
+</Tip>
+</Step>
+</Steps>
+
+## PostgreSQL Database
+
+<AccordionGroup>
+<Accordion title="Introduction to PostgreSQL">
+PostgreSQL is an advanced open-source relational database management system, known for its reliability and feature set.
+</Accordion>
+<Accordion title="How It Works in Our System">
+In our system, PostgreSQL stores and manages data efficiently, providing high performance and stability for our database operations.
+Here is a curated list of api references for our current architecture
+<Tabs>
+  <Tab title="Nest.js Backend">
+    * [TypeOrm](https://orkhan.gitbook.io/typeorm/docs)
+    * [TypeOrm Nest.js](https://docs.nestjs.com/techniques/database)
+  </Tab>
+  <Tab title="Strapi CMS">
+    * [Knex](https://knexjs.org/guide/)
+  </Tab>
+  <Tab title="General Postgres">
+    * [Postgresql documentation](https://www.postgresql.org/docs/)
+    * [Begginer Postgres](https://www.w3schools.com/postgresql/index.php)
+    * [Cheat sheet for postgres](https://tomcam.github.io/postgres/)
+  </Tab>
+</Tabs>
+</Accordion>
+</AccordionGroup>
+
+## Load Balancer
+
+<AccordionGroup>
+<Accordion title="What is a Load Balancer?">
+A load balancer is a system that distributes network or application traffic across multiple servers to optimize resource use, maximize throughput, reduce latency, and ensure fault tolerance.
+</Accordion>
+<Accordion title="Importance in Our System">
+In our system, the load balancer plays a crucial role in handling incoming traffic and distributing it evenly to prevent any single server from becoming a bottleneck.
+</Accordion>
+</AccordionGroup>
+
+## Redis Server
+
+<AccordionGroup>
+<Accordion title="Introduction to Redis">
+Redis is an in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and more.
+</Accordion>
+<Accordion title="Role in Our System">
+Redis ensures that cron jobs that are happening on our backend projects are executed on only one instance of server
+</Accordion>
+</AccordionGroup>
+
+## PM2 Process Manager
+
+<AccordionGroup>
+<Accordion title="Overview of PM2">
+PM2 is a production process manager for Node.js applications with a built-in load balancer.
+</Accordion>
+<Accordion title="Usage in Our System">
+We use PM2 to keep our applications running smoothly, handling automatic restarts, and managing application logging and monitoring.
+</Accordion>
+</AccordionGroup>
+
+## Deployment Script
+
+<Steps>
+<Step title="Role of deploy.bash File">
+The `deploy.bash` file contains a set of commands to automate the deployment process of our applications.
+</Step>
+<Step title="Executing with Sudo">
+To execute the script, use the command `sudo ./deploy.bash`. This requires administrative privileges as it may perform operations that affect the system's configuration.
+</Step>
+</Steps>
+
+## Conclusion
+
+This documentation should serve as a starting point in understanding the key components and operations of our system. For more detailed information, please refer to specific component documentation or contact the system administrator.

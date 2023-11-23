@@ -1,0 +1,102 @@
+
+# Strapi CMS Project - Technical Documentation
+
+## Introduction
+
+This documentation aims to guide junior developers through the DevOps aspects of our Strapi CMS project. We utilize Strapi as a headless CMS, PM2 for process management, a PostgreSQL database, and a connection to our external production backend.
+
+## Our Architecture
+
+### Strapi Headless CMS
+Strapi is the core of our content management, serving as a flexible and customizable headless CMS.
+
+### PM2
+PM2 is used to keep the Strapi application running continuously and manage its processes.
+
+### PostgreSQL Database
+Our data is stored in an external PostgreSQL database, which communicates through a private network.
+
+### Production Backend Communication
+The CMS communicates with our production backend over a public network, ensuring real-time data syncing and management.
+
+## Environment Variables
+
+### Changing the .env File
+<Steps>
+<Step title="Locate .env File">
+Find the .env file in the root of the Strapi project.
+</Step>
+<Step title="Edit .env File">
+Edit the .env file with the necessary changes using a text editor.
+</Step>
+<Step title="Save and Exit">
+Save your changes and close the file.
+</Step>
+</Steps>
+
+### Reloading .env Changes
+<AccordionGroup>
+<Accordion title="Reloading Environment Variables">
+To apply changes made to the .env file without restarting Strapi:
+1. Use PM2 to reload the application.
+2. This will update the environment variables.
+</Accordion>
+</AccordionGroup>
+
+## Deployment Process
+<Steps>
+<Step title="Prepare for Deployment">
+Ensure all changes, including .env modifications, are ready.
+</Step>
+<Step title="Execute Deploy Script">
+Run the deploy.bash script to push changes to the server.
+<Warning>
+For the production cms the command needs to run as sudo
+</Warning>
+</Step>
+</Steps>
+
+## Logs and Monitoring
+
+### Checking Logs with PM2
+To view application logs, use:
+```bash
+pm2 logs [app-name]
+```
+
+### Using Grep with Logs
+Filter specific log entries with grep:
+```bash
+pm2 logs [app-name] | grep [keyword]
+```
+
+## Modifying Deploy.bash for New Plugins
+<Steps>
+<Step title="Open deploy.bash">
+Locate and open the deploy.bash file in your editor.
+</Step>
+<Step title="Add Plugin Installation Commands">
+In the plugins section, add commands to install necessary packages for the new plugin.
+````bash
+cd CMS/
+git fetch
+git pull
+cd ../
+rm -r /var/node/cms
+cp -a CMS/ /var/node/cms
+cp .env /var/node/cms
+cd /var/node/cms
+NODE_ENV=production /usr/bin/yarn install
+cd plugins/calendar
+NODE_ENV=production /usr/bin/yarn install
+cd ../new-plugin-folder-name   #<---- Here is an example of how to add a new plugin
+NODE_ENV=production /usr/bin/yarn install #<---- Here is an example of how to add a new plugin
+cd ../../
+NODE_ENV=production /usr/bin/yarn build
+NODE_ENV=production /usr/bin/pm2 reload default
+````
+</Step>
+<Step title="Save and Close">
+After adding the new commands, save your changes to the deploy.bash script.
+</Step>
+</Steps>
