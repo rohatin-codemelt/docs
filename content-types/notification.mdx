@@ -43,12 +43,12 @@ To add a new payment method to your website, follow these steps:
   </Step>
     <Step title="Additional Data">
     To insert an additional data field press the plus button and select one of the following for each use case:
-    - **SaintNames**: This field will be added when the 'Saint Names' type is selected. After selecting it you can add multiple names and send the notification to them.
-    - **UserRoles**: This field will be added when the 'User Roles' type is selected. After selecting it you will find a dropdown with all possible user roles. You can choose multiple user roles to send the notification.
-    - **SpecificUser**: This field will be added when the 'Specific User' type is selected. After selecting it you will enter the ID of the user you want to send the notification.
-    - **SpecificList**: This field will be added when the 'Specific List' type is selected. After selecting it you will enter a list of IDs for the users you want to send the notification.
-    - **NewPromotion**: This field will be added when the 'New Promotions' type is selected. After selecting it you will find a dropdown with all promotions available in the CMS. You can choose multiple promotions to send the notification to all the users. *The data that you will get from each promotion will be the name and description.
-    - **SportEvents**: This field will be added when the 'Sports Matches/Events Notifications' type is selected. Here you can add a description of the event in the field "DisplayText" and an "URL" to navigate to the event route on the website. This notification will be sent to all users.
+    - **SaintNames**: This field will be added when the 'Saint Names' type is selected. After selecting it you can add multiple names and send the notification to them.  **This notification will be sent to all users who have at least one of the first names included in the list**.
+    - **UserRoles**: This field will be added when the 'User Roles' type is selected. After selecting it you will find a dropdown with all possible user roles. You can choose multiple user roles to send the notification. **This notification will be sent to all users who have at least one role**.
+    - **SpecificUser**: This field will be added when the 'Specific User' type is selected. After selecting it you will enter the ID of the user you want to send the notification. **This notification will be sent only to the user with the specified userId**.
+    - **SpecificList**: This field will be added when the 'Specific List' type is selected. After selecting it you will enter a list of IDs for the users you want to send the notification. **This notification will be sent to users who have the userId in that list**.
+    - **NewPromotion**: This field will be added when the 'New Promotions' type is selected. After selecting it you will find a dropdown with all promotions available in the CMS. You can choose multiple promotions to send the notification to all the users. *The data that you will get from each promotion will be the name and description. **This notification will be sent to all users**.
+    - **SportEvents**: This field will be added when the 'Sports Matches/Events Notifications' type is selected. Here you can add a description of the event in the field "DisplayText" and an "URL" to navigate to the event route on the website. **This notification will be sent to all users**.
     <Warning>
       Select an "AdditionalData" field only when you need one of those described above. For the rest of them don't select an "AdditionalData" field. You can have only one additional data field for one notification.
     </Warning>

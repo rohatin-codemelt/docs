@@ -79,8 +79,7 @@
         "pages": ["api-reference/devops/commonknowledge","api-reference/devops/backend", "api-reference/devops/cms"]
         },
         "api-reference/backend",
-        "api-reference/cms",
-        "api-reference/guideline"
+        "api-reference/cms"
       ]
     }
   ]
